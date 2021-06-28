@@ -31,7 +31,6 @@ function App() {
         price: item.price,
         quantity: 1,
       };
-
       setBasket([...basket, newItem]);
     }
   }
