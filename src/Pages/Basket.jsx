@@ -1,7 +1,5 @@
 export default function Basket({ basket }) {
-  const quantities = Array(item.quantity + 1)
-    .fill()
-    .map((item, index) => index);
+  // const quantities = Array(item.quantity + 1).fill().map((item, index) => index);
 
   return (
     <section class="basket-container">
@@ -15,9 +13,12 @@ export default function Basket({ basket }) {
               <p>
                 Qty:
                 <select value={item.quantity}>
-                  {quantities.map((quantity) => (
-                    <option>{quantity}</option>
-                  ))}
+                  {Array(item.quantity + 1)
+                    .fill()
+                    .map((item, index) => index)
+                    .map((quantity) => (
+                      <option>{quantity}</option>
+                    ))}
                 </select>
               </p>
               <p>Item total: £{(item.price * item.quantity).toFixed(2)}</p>
